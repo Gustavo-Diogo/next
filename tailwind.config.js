@@ -17,18 +17,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#3b82f6",
-          600: "#2563eb",
-          700: "#1d4ed8",
-          800: "#1e40af",
-          900: "#1e3a8a",
+        primary: "#363FC3",
+        secondary: "#5900B8",
+        text: "#1D3451",
+        gray: {
+          bg: "#F2F5F9",
         },
+        purpleT: "#5900B8",
       },
       fontFamily: {
         body: [
@@ -49,6 +44,7 @@ module.exports = {
           "Noto Color Emoji",
         ],
         sans: [
+          "Montserrat",
           "Inter",
           "ui-sans-serif",
           "system-ui",
