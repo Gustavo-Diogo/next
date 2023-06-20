@@ -20,7 +20,7 @@ const LoginPage = () => {
     <div className="flex h-screen w-screen flex-col items-center bg-gray-bg">
       <NavBar />
 
-      <div className="mt-12 flex h-3/4 w-8/12 flex-row rounded-3xl shadow-xl">
+      <div className="mt-12 flex h-3/4 w-8/12 flex-row rounded-3xl bg-white shadow-xl">
         <div className="relative w-full min-w-0">
           <Image src={LeftPanel} alt="LeftPanel" className="h-full w-full rounded-l-3xl object-cover" />
 

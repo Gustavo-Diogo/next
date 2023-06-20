@@ -18,7 +18,7 @@ const TextInput = ({
         placeholder={placeholder}
         onChange={onChangeValue}
         value={value}
-        className="w-full rounded-lg border border-black bg-gray-bg p-2 pr-10"
+        className="w-full rounded-lg border border-black p-2 pr-10"
       />
       {iconSrc && (
         <div className="absolute right-3 top-2/4 -translate-y-2/4">
