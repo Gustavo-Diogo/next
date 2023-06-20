@@ -62,7 +62,7 @@ const LoginPage = () => {
             </div>
           </div>
           <div className="mt-4 flex h-auto w-9/12 flex-col">
-            <div className="mt-4 flex w-full bg-red-300 text-center">
+            <div className="mt-4 flex w-full justify-center text-center ">
               <span className=" text-blue-500">Recuperar chave de acesso</span>
             </div>
           </div>
