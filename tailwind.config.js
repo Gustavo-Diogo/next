@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { pick, omit } = require("lodash")
-const colors = require("tailwindcss/colors")
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
@@ -23,7 +21,7 @@ module.exports = {
         gray: {
           bg: "#F2F5F9",
         },
-        purpleT: "#5900B8",
+        purpleT: { primary: "#5900B8", secondary: "#C199E8", terciary: "#EFDCFF" },
       },
       fontFamily: {
         body: [

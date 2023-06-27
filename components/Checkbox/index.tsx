@@ -9,10 +9,11 @@ const Checkbox = ({ checked, onChange }: CheckboxProps) => {
       onClick={() => {
         onChange(!checked)
       }}
+      className="w-1/3"
     >
       <label className="flex items-center">
-        <input type="checkbox" checked={checked} className="mr-2" />
-        <span>Lembrar</span>
+        <input type="checkbox" className="mr-2" />
+        <span>lembrar</span>
       </label>
     </div>
   )

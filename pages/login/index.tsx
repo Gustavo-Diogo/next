@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { useRouter } from "next/router"
 import { ChangeEvent, useState } from "react"
 import Checkbox from "components/Checkbox"
 import NavBar from "components/Navbar"
@@ -10,6 +11,7 @@ import Icon from "../../assets/teasy-icon.svg"
 const LoginPage = () => {
   const [accessKey, setAccessKey] = useState("")
   const [remember, setRemember] = useState(false)
+  const router = useRouter()
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value
@@ -20,18 +22,21 @@ const LoginPage = () => {
     <div className="flex h-screen w-screen flex-col items-center bg-gray-bg">
       <NavBar />
 
+      {/* white box div */}
       <div className="mt-12 flex h-3/4 w-8/12 flex-row rounded-3xl bg-white shadow-xl">
+        {/* left panel box */}
         <div className="relative w-full min-w-0">
           <Image src={LeftPanel} alt="LeftPanel" className="h-full w-full rounded-l-3xl object-cover" />
 
           <div className="absolute inset-x-12 bottom-0 flex h-32 flex-col gap-1">
-            <span className=" text-2xl font-extrabold text-purpleT">Bem-vindo ao Teasy Bot!</span>
+            <span className=" text-2xl font-extrabold text-purpleT-primary">Bem-vindo ao Teasy Bot!</span>
             <span className=" font-normal tracking-tighter text-text">
               A chave para uma interação perfeita está em suas mãos. Faça login e descubra o poder da comunicação
               inteligente.
             </span>
           </div>
         </div>
+        {/* right panel box */}
         <div className="flex h-full w-full flex-col items-center">
           <div className="mt-10 flex h-auto w-9/12 flex-col">
             <Image src={Icon} alt="LeftPanel" className="h-8 w-8" />
@@ -56,14 +61,19 @@ const LoginPage = () => {
               <PrimaryButton
                 text="Entrar"
                 onClick={() => {
-                  console.log("hello")
+                  router.push("/home")
                 }}
               />
             </div>
           </div>
           <div className="mt-4 flex h-auto w-9/12 flex-col">
-            <div className="mt-4 flex w-full justify-center text-center ">
-              <span className=" text-blue-500">Recuperar chave de acesso</span>
+            <div
+              className="mt-4 flex w-full justify-center text-center"
+              onClick={(e) => {
+                console.log("it will work")
+              }}
+            >
+              <span className="cursor-pointer text-blue-500">Recuperar chave de acesso</span>
             </div>
           </div>
         </div>
