@@ -3,6 +3,7 @@ import NavBar from "components/Navbar"
 import dashboard from "../../assets/dashboard.svg"
 import message from "../../assets/message.svg"
 import qrcode from "../../assets/qrcode.svg"
+import Footer from "components/Footer"
 
 const cards = [
   {
@@ -25,28 +26,32 @@ const cards = [
   },
 ]
 
-const LoginPage = () => {
+const HomePage = () => {
   return (
     <div className="flex h-screen w-screen flex-col items-center bg-gray-bg">
       <NavBar />
-      <div className="mt-6 flex h-40 w-3/4 flex-col items-center text-center text-lg">
+      <div className="my-6 flex h-auto w-3/4 flex-col items-center text-center">
         <div className="flex flex-col items-center">
-          <h1 className=" font-black">
+          <h1 className="text-lg font-black">
             Bem-vindo {"enterprise"}, aproveite o máximo da nossa plataforma para gerencias as suas mensagens de forma
             descomplicada!
           </h1>
           <div className="mt-4 h-1 w-24 rounded-md bg-purpleT-primary"> </div>
         </div>
-
-        <div className="mt-6 flex grid-rows-3 gap-4">
-          {cards.map((card, index) => {
-            const { buttonText, text, title, image } = card
-            return <Card key={index} buttonText={buttonText} text={text} title={title} image={image} />
-          })}
-        </div>
       </div>
+
+      <div className="flex flex-row gap-4 sm:grid-rows-1 md:grid-rows-3">
+        {cards.map((card, index) => {
+          const { buttonText, text, title, image } = card
+          return <Card key={index} buttonText={buttonText} text={text} title={title} image={image} />
+        })}
+      </div>
+      <div className="mt-4">
+        <span>Chave de acesso: 129381283182</span>
+      </div>
+      <Footer />
     </div>
   )
 }
 
-export default LoginPage
+export default HomePage
