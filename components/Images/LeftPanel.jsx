@@ -1,7 +1,13 @@
 const LeftPanel = () => {
   return (
-    <div className="h-full w-full rounded-3xl md:rounded-r-none object-cover">
-      <svg viewBox="0 0 553 523" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className="h-full w-full rounded-3xl object-cover md:rounded-r-none">
+      <svg
+        viewBox="0 0 553 523"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        className="h-full w-full"
+      >
         <path
           d="M0 30C0 13.4315 13.4315 0 30 0H553V523H30C13.4314 523 0 509.569 0 493V30Z"
           fill="url(#paint0_linear_370_531)"

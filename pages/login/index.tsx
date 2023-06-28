@@ -23,15 +23,20 @@ const LoginPage = () => {
       <NavBar />
 
       {/* white box div */}
-      <div className="flex flex-col h-full md:flex-row rounded-3xl bg-white shadow-xl m-12">
+      <div className="m-12 flex h-full flex-col rounded-3xl bg-white shadow-xl md:flex-row">
         {/* left panel box */}
         <div className="relative w-full">
-          <LeftPanel/>
-          {/* <img src={LeftPanel} alt="LeftPanel" className="h-full w-full rounded-3xl md:rounded-r-none object-cover" /> */}
+          {/* <img
+            src={"left-panel.svg"}
+            alt="LeftPanel"
+            className="h-full w-full rounded-3xl object-cover md:rounded-r-none"
+          /> */}
 
-          <div className="absolute inset-x-12 bottom-0 flex h-32 flex-col gap-1">
-            <span className="text-md md:text-2xl text-purpleT-primary">Bem-vindo ao Teasy Bot!</span>
-            <span className="md:text-base font-normal tracking-tighter text-text">
+          <LeftPanel />
+
+          <div className="absolute inset-x-12 bottom-0 hidden flex-col gap-1 md:flex">
+            <span className="text-md text-purpleT-primary md:text-2xl">Bem-vindo ao Teasy Bot!</span>
+            <span className="font-normal tracking-tighter text-text md:text-base">
               A chave para uma interação perfeita está em suas mãos. Faça login e descubra o poder da comunicação
               inteligente.
             </span>
