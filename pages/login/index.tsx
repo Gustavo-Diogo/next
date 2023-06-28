@@ -1,11 +1,11 @@
-import Image from "next/image"
 import { useRouter } from "next/router"
 import { ChangeEvent, useState } from "react"
 import Checkbox from "components/Checkbox"
 import NavBar from "components/Navbar"
 import PrimaryButton from "components/PrimaryButton"
+import LeftPanel from "components/Images/LeftPanel"
 import TextInput from "components/TextInput"
-import LeftPanel from "../../assets/left-panel.svg"
+// import LeftPanel from "../../assets/left-panel.svg"
 import Icon from "../../assets/teasy-icon.svg"
 
 const LoginPage = () => {
@@ -23,23 +23,25 @@ const LoginPage = () => {
       <NavBar />
 
       {/* white box div */}
-      <div className="mt-12 flex h-3/4 w-8/12 flex-row rounded-3xl bg-white shadow-xl">
+      <div className="flex flex-col h-full md:flex-row rounded-3xl bg-white shadow-xl m-12">
         {/* left panel box */}
-        <div className="relative w-full min-w-0">
-          <Image src={LeftPanel} alt="LeftPanel" className="h-full w-full rounded-l-3xl object-cover" />
+        <div className="relative w-full">
+          <LeftPanel/>
+          {/* <img src={LeftPanel} alt="LeftPanel" className="h-full w-full rounded-3xl md:rounded-r-none object-cover" /> */}
 
           <div className="absolute inset-x-12 bottom-0 flex h-32 flex-col gap-1">
-            <span className=" text-2xl font-extrabold text-purpleT-primary">Bem-vindo ao Teasy Bot!</span>
-            <span className=" font-normal tracking-tighter text-text">
+            <span className="text-md md:text-2xl text-purpleT-primary">Bem-vindo ao Teasy Bot!</span>
+            <span className="md:text-base font-normal tracking-tighter text-text">
               A chave para uma interação perfeita está em suas mãos. Faça login e descubra o poder da comunicação
               inteligente.
             </span>
           </div>
         </div>
+
         {/* right panel box */}
         <div className="flex h-full w-full flex-col items-center">
           <div className="mt-10 flex h-auto w-9/12 flex-col">
-            <Image src={Icon} alt="LeftPanel" className="h-8 w-8" />
+            {/* <img src={Icon} alt="LeftPanel" className="h-8 w-8" /> */}
             <span className="mt-4 font-black text-text">Oi! Estou tão feliz em te ver por aqui.</span>
             <span className="mt-4 tracking-tighter text-text">
               Faça login através da sua chave que enviamos por e-mail. Guarde bem essa chave, pois é com ela que você
