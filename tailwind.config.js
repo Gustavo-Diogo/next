@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { pick, omit } = require("lodash")
-const colors = require("tailwindcss/colors")
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
@@ -23,44 +21,11 @@ module.exports = {
         gray: {
           bg: "#F2F5F9",
         },
-        purpleT: "#5900B8",
+        purpleT: { primary: "#5900B8", secondary: "#C199E8", terciary: "#EFDCFF" },
       },
       fontFamily: {
-        body: [
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "system-ui",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Arial",
-          "Noto Sans",
-          "sans-serif",
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji",
-        ],
-        sans: [
-          "Montserrat",
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "system-ui",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Arial",
-          "Noto Sans",
-          "sans-serif",
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji",
-        ],
+        display: ["Montserrat"],
+        body: ["Montserrat"],
       },
       borderWidth: {
         DEFAULT: "1px",
@@ -70,6 +35,18 @@ module.exports = {
         4: "4px",
         6: "6px",
         8: "8px",
+      },
+      fontSize: {
+        xs: "0.625rem",
+        sm: "0.812rem",
+        base: "1rem",
+        md: "1rem",
+        lg: "1.250rem",
+        xl: "1.562rem",
+        "2xl": "1.938rem",
+        "3xl": "2.438rem",
+        "4xl": "3.062rem",
+        "5xl": "3.812rem",
       },
       minHeight: {
         ...defaultTheme.height,
