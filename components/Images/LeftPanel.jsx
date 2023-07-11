@@ -1,6 +1,6 @@
 const LeftPanel = () => {
   return (
-    <div className="h-full w-full rounded-3xl object-cover md:rounded-r-none">
+    <div className="hidden h-full w-full rounded-3xl object-cover md:flex md:rounded-r-none">
       <svg
         viewBox="0 0 553 523"
         fill="none"

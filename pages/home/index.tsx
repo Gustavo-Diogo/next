@@ -46,8 +46,8 @@ const HomePage = () => {
           return <Card key={index} buttonText={buttonText} text={text} title={title} image={image} />
         })}
       </div>
-      <div className="mt-4">
-        <span>Chave de acesso: 129381283182</span>
+      <div className="inset-x-0 top-0 mt-4">
+        <span className="text-gray-300">Chave de acesso: 129381283182</span>
       </div>
       <Footer />
     </div>

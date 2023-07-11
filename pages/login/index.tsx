@@ -7,6 +7,7 @@ import LeftPanel from "components/Images/LeftPanel"
 import TextInput from "components/TextInput"
 // import LeftPanel from "../../assets/left-panel.svg"
 import Icon from "../../assets/teasy-icon.svg"
+import Footer from "components/Footer"
 
 const LoginPage = () => {
   const [accessKey, setAccessKey] = useState("")
@@ -23,7 +24,7 @@ const LoginPage = () => {
       <NavBar />
 
       {/* white box div */}
-      <div className="m-12 flex h-full flex-col rounded-3xl bg-white shadow-xl md:flex-row">
+      <div className="m-12 flex flex-col rounded-3xl bg-white shadow-xl md:flex-row">
         {/* left panel box */}
         <div className="relative w-full">
           {/* <img
@@ -85,6 +86,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
