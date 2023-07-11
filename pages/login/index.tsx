@@ -1,13 +1,12 @@
 import { useRouter } from "next/router"
 import { ChangeEvent, useState } from "react"
 import Checkbox from "components/Checkbox"
+import Footer from "components/Footer"
+import LeftPanel from "components/Images/LeftPanel"
 import NavBar from "components/Navbar"
 import PrimaryButton from "components/PrimaryButton"
-import LeftPanel from "components/Images/LeftPanel"
 import TextInput from "components/TextInput"
 // import LeftPanel from "../../assets/left-panel.svg"
-import Icon from "../../assets/teasy-icon.svg"
-import Footer from "components/Footer"
 
 const LoginPage = () => {
   const [accessKey, setAccessKey] = useState("")
@@ -36,8 +35,10 @@ const LoginPage = () => {
           <LeftPanel />
 
           <div className="absolute inset-x-12 bottom-0 hidden flex-col gap-1 md:flex">
-            <span className="text-md text-purpleT-primary md:text-2xl">Bem-vindo ao Teasy Bot!</span>
-            <span className="font-normal tracking-tighter text-text md:text-base">
+            <span className="font-montserrat text-md font-bold text-purpleT-primary md:text-2xl">
+              Bem-vindo ao Teasy Bot!
+            </span>
+            <span className="font-montserrat tracking-tighter text-text md:text-base">
               A chave para uma interação perfeita está em suas mãos. Faça login e descubra o poder da comunicação
               inteligente.
             </span>
@@ -45,17 +46,19 @@ const LoginPage = () => {
         </div>
 
         {/* right panel box */}
-        <div className="flex h-full w-full flex-col items-center">
-          <div className="mt-10 flex h-auto w-9/12 flex-col">
+        <div className="flex h-full w-full flex-col items-center justify-center">
+          <div className="flex h-auto w-9/12 flex-col">
             {/* <img src={Icon} alt="LeftPanel" className="h-8 w-8" /> */}
-            <span className="mt-4 font-black text-text">Oi! Estou tão feliz em te ver por aqui.</span>
-            <span className="mt-4 tracking-tighter text-text">
+            <span className="mt-4 font-montserrat text-lg font-bold text-text">
+              Oi! Estou tão feliz em te ver por aqui.
+            </span>
+            <span className="mt-4 font-montserrat text-md tracking-tighter text-text">
               Faça login através da sua chave que enviamos por e-mail. Guarde bem essa chave, pois é com ela que você
               terá acesso a todo o sistema.
             </span>
           </div>
           <div className="mt-4 flex h-auto w-9/12 flex-col">
-            <span className="mt-4 tracking-tighter text-text">Chave de acesso *</span>
+            <span className="mt-4 font-montserrat tracking-tighter text-text">Chave de acesso *</span>
             <TextInput onChangeValue={handleInputChange} placeholder="xxxx-xxxx-xxxx-xxxx" value={accessKey} />
             <div className="mt-4">
               <Checkbox
@@ -77,11 +80,11 @@ const LoginPage = () => {
           <div className="mt-4 flex h-auto w-9/12 flex-col">
             <div
               className="mt-4 flex w-full justify-center text-center"
-              onClick={(e) => {
+              onClick={() => {
                 console.log("it will work")
               }}
             >
-              <span className="cursor-pointer text-blue-500">Recuperar chave de acesso</span>
+              <span className="cursor-pointer font-montserrat text-blue-500">Recuperar chave de acesso</span>
             </div>
           </div>
         </div>

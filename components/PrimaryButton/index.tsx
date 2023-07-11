@@ -8,7 +8,7 @@ const PrimaryButton = ({ text, onClick }: { text: string; onClick: ReactEventHan
       onClick={onClick}
       className="flex cursor-pointer items-center justify-center rounded-lg bg-purpleT-primary p-1"
     >
-      <span className="text-white">{text}</span>
+      <span className="font-montserrat text-white">{text}</span>
       <Image src={RightArrow} alt="LeftPanel" className="h-4 w-4" />
     </div>
   )

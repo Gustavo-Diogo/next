@@ -1,9 +1,9 @@
 import Card from "components/Card"
+import Footer from "components/Footer"
 import NavBar from "components/Navbar"
 import dashboard from "../../assets/dashboard.svg"
 import message from "../../assets/message.svg"
 import qrcode from "../../assets/qrcode.svg"
-import Footer from "components/Footer"
 
 const cards = [
   {
@@ -32,7 +32,7 @@ const HomePage = () => {
       <NavBar />
       <div className="my-6 flex h-auto w-3/4 flex-col items-center text-center">
         <div className="flex flex-col items-center">
-          <h1 className="text-lg font-black">
+          <h1 className="font-montserrat text-lg font-bold">
             Bem-vindo {"enterprise"}, aproveite o máximo da nossa plataforma para gerencias as suas mensagens de forma
             descomplicada!
           </h1>
@@ -46,8 +46,8 @@ const HomePage = () => {
           return <Card key={index} buttonText={buttonText} text={text} title={title} image={image} />
         })}
       </div>
-      <div className="inset-x-0 top-0 mt-4">
-        <span className="text-gray-300">Chave de acesso: 129381283182</span>
+      <div className="mt-60">
+        <span className="font-montserrat text-gray-300">Chave de acesso: 129381283182</span>
       </div>
       <Footer />
     </div>

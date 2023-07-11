@@ -25,7 +25,7 @@ module.exports = {
       },
       fontFamily: {
         display: ["Montserrat"],
-        body: ["Montserrat"],
+        montserrat: ["Montserrat"],
       },
       borderWidth: {
         DEFAULT: "1px",

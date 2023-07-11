@@ -19,12 +19,12 @@ const Card = ({
       </div>
 
       <div className="mt-4">
-        <h2 className=""> {title} </h2>
-        <div className="mt-2 h-1 w-16 rounded-md bg-purpleT-primary"></div>
+        <h2 className="font-montserrat font-extrabold"> {title} </h2>
+        <div className="mt-2 h-1 w-16 rounded-md  bg-purpleT-primary"></div>
       </div>
 
       <div className="my-4 text-left">
-        <span className="text-base tracking-tighter">{text}</span>
+        <span className="font-montserrat text-base tracking-tighter">{text}</span>
       </div>
 
       <div className="w-full">
