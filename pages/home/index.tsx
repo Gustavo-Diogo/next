@@ -28,9 +28,9 @@ const cards = [
 
 const HomePage = () => {
   return (
-    <div className="flex h-screen w-screen flex-col items-center bg-gray-bg">
+    <div className="flex h-auto w-screen flex-col items-center bg-gray-bg lg:h-screen">
       <NavBar />
-      <div className="my-6 flex h-auto w-3/4 flex-col items-center text-center">
+      <div className="flex h-auto w-3/4 flex-col items-center text-center">
         <div className="flex flex-col items-center">
           <h1 className="font-montserrat text-lg font-bold">
             Bem-vindo {"enterprise"}, aproveite o máximo da nossa plataforma para gerencias as suas mensagens de forma
@@ -40,13 +40,18 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="flex flex-row gap-4 sm:grid-rows-1 md:grid-rows-3">
+      <div className="my-8 gap-4 lg:flex lg:flex-row">
         {cards.map((card, index) => {
           const { buttonText, text, title, image } = card
-          return <Card key={index} buttonText={buttonText} text={text} title={title} image={image} />
+          return (
+            <div key={index} className="h-80 w-80">
+              <Card buttonText={buttonText} text={text} title={title} image={image} />
+            </div>
+          )
         })}
       </div>
-      <div className="mt-60">
+
+      <div className="my-20 lg:mt-60">
         <span className="font-montserrat text-gray-300">Chave de acesso: 129381283182</span>
       </div>
       <Footer />

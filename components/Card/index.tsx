@@ -13,7 +13,7 @@ const Card = ({
   image: string
 }) => {
   return (
-    <div className="flex h-80 w-80 flex-col items-start rounded-md bg-white p-4 shadow-md">
+    <div className="flex flex-col items-start rounded-md bg-white p-4 shadow-md">
       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-purpleT-terciary">
         <Image src={image} alt="icon" className="w-12" />
       </div>
