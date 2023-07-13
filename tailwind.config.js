@@ -23,6 +23,7 @@ module.exports = {
         },
         purpleT: { primary: "#5900B8", secondary: "#C199E8", terciary: "#EFDCFF" },
       },
+
       fontFamily: {
         display: ["Montserrat"],
         montserrat: ["Montserrat"],
