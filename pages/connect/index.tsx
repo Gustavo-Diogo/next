@@ -1,8 +1,7 @@
-import QrCode from "assets/qrcode-image.svg"
 import Footer from "components/Footer"
 import NavBar from "components/Navbar"
+import QrCode from "components/QrCode"
 import TimeLine from "components/Timeline/"
-import Image from "next/image"
 
 const HomePage = () => {
   return (
@@ -22,7 +21,7 @@ const HomePage = () => {
               <TimeLine />
             </div>
             <div className="mx-4 flex w-2/5 items-center justify-center">
-              <Image src={QrCode} alt="a" />
+              <QrCode />
             </div>
           </div>
         </div>
