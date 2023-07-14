@@ -6,11 +6,13 @@ const Card = ({
   text,
   buttonText,
   image,
+  onClick,
 }: {
   title: string
   text: string
   buttonText: string
   image: string
+  onClick: () => void
 }) => {
   return (
     <div className="flex flex-col items-start rounded-md bg-white p-4 shadow-md">
@@ -28,12 +30,7 @@ const Card = ({
       </div>
 
       <div className="w-full">
-        <Button
-          text={buttonText}
-          onClick={() => {
-            console.log(1)
-          }}
-        />
+        <Button text={buttonText} onClick={onClick} />
       </div>
     </div>
   )

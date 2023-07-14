@@ -11,9 +11,8 @@ const QrCode = () => {
       getQrCode()
     } else {
       refreshQRCode()
-      setCounter(counter + 1)
     }
-  }, [counter])
+  }, [])
 
   const getQrCode = async () => {
     const { data } = await teasybot.get("/connect", {
@@ -37,9 +36,14 @@ const QrCode = () => {
     console.log(data)
     const { qrcode } = data
     setImage(qrcode != "none" ? qrcode : "")
+    setCounter(counter + 1)
   }
 
-  return <div>{image && <Image src={image} alt="QRCode deve estar aqui" width={280} height={280} />}</div>
+  return (
+    <div>
+      {image ? <Image src={image} alt="QRCode deve estar aqui" width={280} height={280} /> : <>Carregando...</>}
+    </div>
+  )
 }
 
 export default QrCode

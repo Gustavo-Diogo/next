@@ -8,7 +8,7 @@ const HomePage = () => {
     <div className="flex h-screen w-screen flex-col items-center bg-gray-bg">
       <NavBar />
 
-      <div className="flex h-screen w-screen flex-col items-center justify-center">
+      <div className="mb-8 flex h-screen w-screen flex-col items-center justify-center">
         <div className="w-10/12 rounded-md bg-white pt-4 shadow-sm">
           <div className="flex flex-col items-center text-center">
             <h2 className="font-montserrat font-bold">Siga o passo a passo para fazer a conexão com seu Whatsapp</h2>
