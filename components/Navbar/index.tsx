@@ -4,8 +4,6 @@ import { useRouter } from "next/router"
 
 export default function NavBar() {
   const router = useRouter()
-  console.log(router.pathname)
-
   const verifyRoute = (path: string) => {
     if (router.pathname === path) {
       return true
@@ -49,7 +47,7 @@ export default function NavBar() {
         <span className="font-montserrat text-xl font-black text-primary">teasy bot</span>
       </div>
 
-      <div className="mr-10 flex gap-10">
+      <div className="mr-10 hidden gap-10 md:flex">
         {nav.map((item, index) => {
           return (
             <div

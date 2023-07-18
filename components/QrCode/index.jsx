@@ -1,9 +1,11 @@
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import teasybot from "../../service/teasybot"
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const QrCode = () => {
   const [image, setImage] = useState(false)
+  const [connected, setConnected] = useState(false)
   const [counter, setCounter] = useState(0)
 
   useEffect(() => {
@@ -12,7 +14,7 @@ const QrCode = () => {
     } else {
       refreshQRCode()
     }
-  }, [])
+  }, [counter])
 
   const getQrCode = async () => {
     const { data } = await teasybot.get("/connect", {
@@ -23,7 +25,8 @@ const QrCode = () => {
 
     const { qrcode } = data
     setImage(qrcode)
-    // refresh()
+    await sleep(65000)
+    setCounter(counter + 1)
   }
 
   const refreshQRCode = async () => {
@@ -32,11 +35,21 @@ const QrCode = () => {
         access_key: "wygBEc20vB&S5p",
       },
     })
-
-    console.log(data)
-    const { qrcode } = data
+    const { qrcode, tries } = data
     setImage(qrcode != "none" ? qrcode : "")
-    setCounter(counter + 1)
+    await sleep(18000)
+    if (tries != 4 && connected == false) {
+      setCounter(counter + 1)
+    } else {
+      const { data } = await teasybot.get("/status", {
+        headers: {
+          access_key: "wygBEc20vB&S5p",
+        },
+      })
+      const { status } = data
+
+      console.log(status)
+    }
   }
 
   return (
