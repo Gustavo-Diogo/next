@@ -25,7 +25,7 @@ export default function Footer() {
   ]
 
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-gray-bg p-4 shadow-md">
+    <div className="bottom-0 left-0 w-full bg-gray-bg p-4 shadow-md">
       <div className="flex items-center justify-center gap-5">
         <Image src={TeasyLogo} alt="Icon" />
 

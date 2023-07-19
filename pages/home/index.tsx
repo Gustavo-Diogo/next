@@ -1,7 +1,6 @@
 import { useRouter } from "next/router"
 import Card from "components/Card"
-import Footer from "components/Footer"
-import NavBar from "components/Navbar"
+import { MainContainer } from "components/MainContainer"
 import dashboard from "../../assets/dashboard.svg"
 import message from "../../assets/message.svg"
 import qrcode from "../../assets/qrcode.svg"
@@ -33,42 +32,42 @@ const cards = [
 const HomePage = () => {
   const router = useRouter()
   return (
-    <div className="flex h-auto w-screen flex-col items-center bg-gray-bg lg:h-screen">
-      <NavBar />
-      <div className="mt-6 flex h-auto w-3/4 flex-col items-center text-center">
-        <div className="flex flex-col items-center">
-          <h1 className="font-montserrat text-lg font-bold">
-            Bem-vindo {"enterprise"}, aproveite o máximo da nossa plataforma para gerencias as suas mensagens de forma
-            descomplicada!
-          </h1>
-          <div className="mt-4 h-1 w-24 rounded-md bg-purpleT-primary"> </div>
+    <MainContainer>
+      <div className="flex h-screen flex-col items-center bg-gray-bg ">
+        <div className="mt-12 flex  w-3/4 flex-col items-center text-center">
+          <div className="flex flex-col items-center">
+            <h1 className="font-montserrat text-lg font-bold">
+              Bem-vindo {"enterprise"}, aproveite o máximo da nossa plataforma para gerencias as suas mensagens de forma
+              descomplicada!
+            </h1>
+            <div className="mt-4 h-1 w-24 rounded-md bg-purpleT-primary"> </div>
+          </div>
+        </div>
+
+        <div className="my-8 gap-4 lg:flex lg:flex-row">
+          {cards.map((card, index) => {
+            const { buttonText, text, title, image, link } = card
+            return (
+              <div key={index} className="h-80 w-80">
+                <Card
+                  buttonText={buttonText}
+                  text={text}
+                  title={title}
+                  image={image}
+                  onClick={() => {
+                    router.push(link)
+                  }}
+                />
+              </div>
+            )
+          })}
+        </div>
+
+        <div className="my-20 lg:mt-60">
+          <span className="font-montserrat text-gray-300">Chave de acesso: 129381283182</span>
         </div>
       </div>
-
-      <div className="my-8 gap-4 lg:flex lg:flex-row">
-        {cards.map((card, index) => {
-          const { buttonText, text, title, image, link } = card
-          return (
-            <div key={index} className="h-80 w-80">
-              <Card
-                buttonText={buttonText}
-                text={text}
-                title={title}
-                image={image}
-                onClick={() => {
-                  router.push(link)
-                }}
-              />
-            </div>
-          )
-        })}
-      </div>
-
-      <div className="my-20 lg:mt-60">
-        <span className="font-montserrat text-gray-300">Chave de acesso: 129381283182</span>
-      </div>
-      <Footer />
-    </div>
+    </MainContainer>
   )
 }
 

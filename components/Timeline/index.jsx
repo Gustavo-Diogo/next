@@ -26,7 +26,7 @@ const TimeLine = () => {
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purpleT-primary">
           <Image src={Share} alt={""} className="text-white" />
         </div>
-        <span className="font-montserrat font-bold">Toque em conectar dispositivos</span>
+        <span className="font-montserrat font-bold ">Toque em conectar dispositivos</span>
       </div>
       <div className="z-10 flex items-center gap-6">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purpleT-primary">
