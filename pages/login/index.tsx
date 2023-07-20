@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useRouter } from "next/router"
 import { ChangeEvent, useState } from "react"
 import Checkbox from "components/Checkbox"
@@ -7,6 +8,11 @@ import PrimaryButton from "components/PrimaryButton"
 import TextInput from "components/TextInput"
 // import LeftPanel from "../../assets/left-panel.svg"
 
+const api = axios.create({
+  baseURL: "https://b7tnnowfgg.execute-api.us-east-1.amazonaws.com",
+  timeout: 8000,
+})
+
 const LoginPage = () => {
   const [accessKey, setAccessKey] = useState("")
   const [remember, setRemember] = useState(false)
@@ -15,6 +21,22 @@ const LoginPage = () => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value
     setAccessKey(newValue)
+  }
+
+  const login = async () => {
+    try {
+      const res = await api.get("/auth", {
+        headers: {
+          access_key: accessKey,
+        },
+      })
+
+      console.log(res)
+
+      router.push("/home")
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -67,12 +89,7 @@ const LoginPage = () => {
                 />
               </div>
               <div className="mt-4">
-                <PrimaryButton
-                  text="Entrar"
-                  onClick={() => {
-                    router.push("/home")
-                  }}
-                />
+                <PrimaryButton text="Entrar" onClick={login} />
               </div>
             </div>
             <div className="mt-4 flex h-auto w-9/12 flex-col">

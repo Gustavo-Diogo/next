@@ -1,10 +1,10 @@
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import teasybot from "../../service/teasybot"
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-const QrCode = ({ connect, setConnect }) => {
-  const [image, setImage] = useState(false)
+const QrCode = ({ connect, setConnect }: { connect: any; setConnect: any }) => {
+  const [image, setImage] = useState("")
   const [counter, setCounter] = useState(0)
 
   useEffect(() => {
