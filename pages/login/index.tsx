@@ -1,11 +1,12 @@
 import axios from "axios"
 import { useRouter } from "next/router"
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useContext, useState } from "react"
 import Checkbox from "components/Checkbox"
 import LeftPanel from "components/Images/LeftPanel"
 import { MainContainer } from "components/MainContainer"
 import PrimaryButton from "components/PrimaryButton"
 import TextInput from "components/TextInput"
+import { UserContext } from "context/userContext"
 // import LeftPanel from "../../assets/left-panel.svg"
 
 const api = axios.create({
@@ -17,6 +18,7 @@ const LoginPage = () => {
   const [accessKey, setAccessKey] = useState("")
   const [remember, setRemember] = useState(false)
   const router = useRouter()
+  const { handleValues } = useContext(UserContext)
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value
@@ -25,14 +27,21 @@ const LoginPage = () => {
 
   const login = async () => {
     try {
-      const res = await api.get("/auth", {
+      const { data } = await api.get("/auth", {
         headers: {
           access_key: accessKey,
         },
       })
-
-      console.log(res)
-
+      const newValues = {
+        uuid: data.company.uuid,
+        name: data.company.name,
+        botServer: data.company.botServer,
+        amountMessages: data.company.amountMessages,
+        amountFailedMessages: data.company.amountFailedMessages,
+        amountRequests: data.company.amountRequests,
+        amountSuccessfulMessages: data.company.amountSuccessfulMessages,
+      }
+      handleValues(newValues)
       router.push("/home")
     } catch (err) {
       console.log(err)

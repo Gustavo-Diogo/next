@@ -2,15 +2,11 @@ import React from "react"
 import Footer from "components/Footer"
 import NavBar from "components/Navbar"
 
-interface ContainerProps {
-  children: React.ReactNode
-}
-
-export const MainContainer = (props: ContainerProps) => {
+export const MainContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <NavBar />
-      {props.children}
+      {children}
       <Footer />
     </>
   )
